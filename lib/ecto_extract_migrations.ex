@@ -82,7 +82,7 @@ defmodule EctoExtractMigrations do
   @spec module_parse({binary, integer}, list(module)) :: {list, nil | {module, map}}
   def module_parse({line, line_num}, []) do
     # No parser matched line
-    Mix.shell().info("UNKNOWN #{line_num}> #{String.trim_trailing(line)}")
+    IO.puts("UNKNOWN #{line_num}> #{String.trim_trailing(line)}")
     {[], nil}
   end
   def module_parse({line, line_num}, [module | rest]) do
